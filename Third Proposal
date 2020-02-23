@@ -1,0 +1,19 @@
+Second proposal
+
+Project Title
+Greet and Treat
+
+Project Idea Description
+The field of cognitive computing is one of the most interesting researches going on currently. With this project,we use the concept of cognitive computing system on IBM Watson, to learn and interpret data. Cognitive computing system use various concepts of Natural Language Processing(NLP) and Machine Learning(ML) for the purpose of developing patterns within the data and build their own learning structures to answer questions they are asked accurately, which is what we intend to implement so user can easily get access to medical information such as illness, allergies, infections, etc which could be filtered based on geographic locations as well, to give warnings on specific location epidemics.
+
+Goals of the project
+To classify and provide appropriate results, when a user implements certain inputs, based on his symptoms. The application, would provide possible list of  illness, allergies, infections prioritized based not just on symptoms, but also on the location the user is situated in, so that it could warn the user about specific epidemics that have similar symptoms prominent in the area.
+
+Abstract
+Cognitive Computing is an upcoming field in Computer Science and cognitive systems are generated to mimic the human thought process by accepting natural language inputs and processing it with the help of machine learning techniques. These systems interact with each other and help humans to gain insights of the data. IBM Watson is an example of such cognitive question-answering system, which is capable of handling natural language questions asked by the users. IBM Watson accepts questions expressed in natural language by users and seeks to understand it to return appropriate result. It immediately retrieves suggestions for user’s questions. We make use of IBM Watson in this project to take multiple symptoms from the user and it would give results on what could possible be the illness.
+While Cognitive Computing has now began its advancement in the feild of Medicine, we intend to provide users with an application that can provide them with possible illness/allergies/infections based on the symptoms entered by the user. Using IBM Watson, we use the huge datasets available on the internet to give appropriate results.
+
+
+Technology Stack:
+IBM Watson, Machine Learning, Natural Language Processing
+Python
