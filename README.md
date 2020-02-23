@@ -44,10 +44,10 @@ With the advent of increase in population, the food wastage has become a global 
 The project intends to keep track of the refrigirated fresh produce and help consume them before they begin to rot. After the user shops for fresh produce or diary product, he uploads a picture of the invoice. Using text recognition achived through machine learning with the help of IBM Watson, the application identifies the fresh produce in the grocery bag and their shelf life after they are refrigirated. For instance if the user had shopped for carrots and eggplants, the application adentifies the approximate shelf life of carrots and eggplant when refrigirated. After the shelf life is identified as n days, the application prompts the user to utilise the items in n/2 days. In the example here shelf life of carrot is 21 days and that of eggplant is 7 days, after 3 days the application notifies the user to consume the eggplant if not already done and also suggests a few recipies which include eggplant and any other vegetable or fresh produce present, like here carrots. After the completion of n days, the application prompts the user to discard the foos product as it has become stale. The user can additionally login to the application to manipulate the items in his list.
 
 **Hill Statement** <br />
-**Who** Common people who buy groceries but are unable to track when it begins to stale. <br />
-**What** Alert them with the upcoming expiration of their perishable food.
+* **Who** Common people who buy groceries but are unable to track when it begins to stale. <br />
+* **What** Alert them with the upcoming expiration of their perishable food.
 
 **Technology Stack (Tentative)**<br />
-Programming languages & Libraries: Python. <br />
-Tools & Technologies: Machine Learning, IBM Watson, Cloud for deployment <br />
-Web Technologies: HTML5, CSS3, JavaScript, React, REST API
+* **Programming languages & Libraries:** Python. <br />
+* **Tools & Technologies:** Machine Learning, IBM Watson, Cloud for deployment <br />
+* **Web Technologies:** HTML5, CSS3, JavaScript, React, REST API
