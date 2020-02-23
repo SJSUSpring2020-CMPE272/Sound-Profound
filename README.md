@@ -1,6 +1,6 @@
 # ProjectGroup-14
 
-# First proposal
+# Project Idea-1
 
 **Project Title**  
 Sound Profound !  
@@ -30,7 +30,7 @@ In this project we would attempt to distinguish between the different environmen
 
 
 
-# Second proposal
+# Project Idea-2
 
 **Project Title** <br />
 Still good or Stale! 
@@ -54,7 +54,7 @@ The project intends to keep track of the refrigirated fresh produce and help con
 * **Web Technologies:** HTML5, CSS3, JavaScript, React, REST API
 
 
-# Third proposal
+# Project Idea-3
 
 **Project Title** <br />
 Greet and Treat
