@@ -26,3 +26,22 @@ In this project we would attempt to distinguish between the different environmen
 * 	Keras
 * 	Librosa for analysis of audio signals.
 
+
+
+
+# Second proposal
+
+**Project Title**: Still good or Stale! 
+
+ **Goal**
+To reduce food wastage due to the expiration of perishable food. 
+
+**Abstract**
+With the advent of increase in population, the food wastage has become a global crisis. As a fact in US alone “40 percent of food gets tossed every year—and that amounts to $162 billion in waste annually, according to the Natural Resources Defense Council.” Many researchers and environmentalists are trying to figure out the best methods to reduce the food wastage. Either by spreading awareness about food wastage or by building a tool to track and reduce the food wastage. Our product aims to do so by the second approach, i.e. by providing a tool to track the life span of food products when refrigerated. As one of the main contributors to the food wastage is the inability to track when the food starts to stale. 
+
+ 
+
+**Description** 
+
+ 
+
