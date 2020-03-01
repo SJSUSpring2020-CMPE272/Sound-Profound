@@ -4,6 +4,7 @@
 
 **Project Title**  
 Sound Profound !  
+# Approved
 (Urban Sound Classification and its response to gunshot sound using the implementation of Deep Neural Networks)
 
 **Project Idea Description**  
