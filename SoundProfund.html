@@ -10,7 +10,7 @@ body {
 }
 
 .speaker-image {
-  background-image: url("https://github.com/SJSUSpring2020-CMPE272/Sound-Profound/blob/master/Speakers.jpg");
+  background-image: url("/Users/bhavana/SJSU/CMPE272/Project/Speakers.jpg");
   background-color: #cccccc;
   height: 600px;
   background-position: center;
@@ -53,8 +53,6 @@ body {
 </head>
 <body>
 
-<!-- http://www.wallpaperdisk.com/download-Speaker-7054-wallpaper.html
-https://i.pinimg.com/474x/21/53/5d/21535d4840db763f83a3d732e3f3a497--wallpaper-backgrounds-desktop-wallpapers.jpg -->
 
 <div class="speaker-image">
 
@@ -62,25 +60,31 @@ https://i.pinimg.com/474x/21/53/5d/21535d4840db763f83a3d732e3f3a497--wallpaper-b
     <h1 style="font-size:50px">Sound Profound</h1>
   </div>
 
-  <div class="input-button">
-    <form ng-app="myApp" ng-controller="myCtrl">
-    <form ng-submit="myFunc()">
+  <div class="input-button" ng-app="myApp" ng-controller="myCtrl">
   	<label for="audio"><h2>Upload your Audio File: </h2></label>
   	<br>
   	<input type="file" id="audio" name="audio" accept="audio/*">
-  	<input type="submit" value="Upload">
-  	</form>
+  	<input type="submit" ng-submit="myFunc()" value="Upload">
 	</form>
   </div>
 
-  <p>{{myTxt}}</p>
-
   <script>
 	var app = angular.module("myApp", []);
-	app.controller("myCtrl", function($scope) {
-	  $scope.myFunc = function () {
-	      $scope.myTxt = "Upload Successful!";
-	  }
+	app.controller("myCtrl", function($scope, $http) {
+		var formdata = new FormData();
+		let audioUploaded = document.getElementById('audio');
+		formdata.append('audioFile', audioUploaded);
+		/*$.ajax({
+          type: 'POST',
+          url: '/tracks',
+          data: fd,
+          processData: false,
+          contentType: false,
+          dataType: "script"
+      });*/
+      var request = new XMLHttpRequest();
+      request.open("POST", "http://foo.com/submitform.php");
+      request.send(formData);
 	});
   </script>
 
@@ -95,4 +99,3 @@ https://i.pinimg.com/474x/21/53/5d/21535d4840db763f83a3d732e3f3a497--wallpaper-b
 
 </body>
 </html>
-
