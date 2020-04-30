@@ -1,0 +1,6 @@
+ applications:
+ - name: SoundProfound
+   random-route: true
+   buildpack: python_buildpack
+   command: python3 app.py
+   memory: 2048M

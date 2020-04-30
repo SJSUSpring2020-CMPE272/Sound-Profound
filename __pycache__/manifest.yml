@@ -1,4 +1,0 @@
-applications:
-- name: sound-profound
-  random-route: true
-  memory: 128M
