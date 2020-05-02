@@ -95,7 +95,7 @@ body {
 			app.controller("myCtrl", function($scope, $http) {
 			  $scope.myFunc = function () {	
 
-				let url = 'http://localhost:5000/upload';
+				let url = 'http://ec2-3-17-5-13.us-east-2.compute.amazonaws.com:5000/upload';
 				let audioUploaded = document.getElementById('audioFile');
         let fileList = audioUploaded.files;
 
@@ -108,7 +108,7 @@ body {
             if (this.readyState == 4 && this.status == 200) {
               var myArr = JSON.parse(this.response);
               console.log(myArr.sound_source);
-              $scope.myTxt = myArr.sound_source + ' detected'
+              alert(myArr.sound_source + ' detected')
             }
           };
           request.open("POST", url);
