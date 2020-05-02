@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -65,14 +65,6 @@ body {
   color: white;
 }
 
-.output-text {
-  text-align: center;
-  position: absolute;
-  top: 70%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
 </style>
 </head>
 <body>
@@ -88,64 +80,57 @@ body {
 		<form ng-submit="myFunc()">
 	  		<label for="audio"><h2>Upload your Audio File: </h2></label>
 	  		<br>
-	  		<input type="file" id="audio" name="audio" accept="audio/wav">
+	  		<input type="file" id="audioFile" name="audio" accept="audio/wav">
 	  		<input type="submit" value="Upload">	
 		</form>
 		
-		<h3>{{myTxt}}</h3>
+		<ng-container *ngIf="myTxt">
+      <br>
+      <h2>{{myTxt}}</h2>
+    </ng-container>
 
 		<script>
 			var app = angular.module("myApp", []);
+
 			app.controller("myCtrl", function($scope, $http) {
-			$scope.myFunc = function () {	
-				var formData = new FormData();
-				let url = 'http://destinationurl.com/endpoint';
-				let audioUploaded = document.getElementById('audio');
-				formData.append('audioFile', audioUploaded);
+			  $scope.myFunc = function () {	
 
-				/*
-					for (var value of formData.values()) {
-	   				console.log(value); 
-					}
-					$.ajax({
-	          		type: 'POST',
-	          		url: '/tracks',
-	          		data: fd,
-	          		processData: false,
-	          		contentType: false,
-	          		dataType: "script"
-	      		});
-		      	=====
-		      	var request = new XMLHttpRequest();
-		     	request.open("POST", "url of the api");
-		      	request.send(this.formdata);
-				
-	      		==========
-	     		*/ 
+				let url = 'http://localhost:5000/upload';
+				let audioUploaded = document.getElementById('audioFile');
+        let fileList = audioUploaded.files;
 
-	      		$http.post(url,formData).subscribe(response => {
-	    			$scope.myTxt = message;
-				}, err => {
-	    			$scope.myTxt = message;
-				});
-	      	}
-			});
+        if(fileList.length > 0) {
+          let file= fileList[0];
+          let formData = new FormData();
+          formData.append("file", file);
+          var request = new XMLHttpRequest();
+          request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var myArr = JSON.parse(this.response);
+              console.log(myArr.sound_source);
+              $scope.myTxt = myArr.sound_source + ' detected'
+            }
+          };
+          request.open("POST", url);
+          request.setRequestHeader("Accept", "application/json");
+          request.setRequestHeader("Access-Control-Allow-Origin", "*");
+          request.send(formData);
+
+        }
+	      }
+			}
+      );
+
 		</script>
 
 	</div>
 
-	<div class="output-text">
-  		<h2>The sound is of: </h2>
-  		<h2>Response from python API </h2>
-  	</div>
-
 </div>
 </body>
 <ul>
-  <li><a href="https://app.vyond.com/videos/a754695e-ceca-4c6b-9224-344f87f3fcf0">Trailer</a></li>
+  <li><a href="https://app.vyond.com/videos/a754695e-ceca-4c6b-9224-344f87f3fcf0" target="_blank">Trailer</a></li>
   <li><a href="SoundProfund.html">Home</a></li>
   <li><a href="Architecture.html">Architecture</a></li>
-  <li><a href="Model.html">Model</a></li>
   <li><a href="Persona.html">Persona</a></li>
   <li><a href="About.html">About</a></li>
 </ul>
