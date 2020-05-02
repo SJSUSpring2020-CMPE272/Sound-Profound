@@ -1,7 +1,7 @@
 import os
 from flask import Flask, flash, request, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
-
+from flask_cors import CORS
 from model_test import Predict,PredictVersion2
 
 #get current directory path
@@ -16,6 +16,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = upload_folder
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
+CORS(app)
 #function to get check if the file uploaded is of correct extention
 def verify_extention(filename):
     return '.' in filename and \
@@ -55,7 +56,11 @@ def file_upload():
             return response
     return jsonify({"message":"File upload failed, reupload file "}), 500
 
+@app.route('/')
+def success():
+  return "Success"
+
 if __name__ == '__main__':
 
     #sess.init_app(app)
-    app.run(port=5000, debug=True)
+    app.run(host="0.0.0.0",port=5000, debug=True)

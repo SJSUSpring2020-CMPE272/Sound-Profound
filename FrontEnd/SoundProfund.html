@@ -77,7 +77,7 @@ body {
 	</div>
 
 	<div class="input-button" ng-app="myApp" ng-controller="myCtrl">
-		<form ng-submit="myFunc()">
+		<form id="formfile" enctype="multipart/form-data" ng-submit="myFunc()">
 	  		<label for="audio"><h2>Upload your Audio File: </h2></label>
 	  		<br>
 	  		<input type="file" id="audioFile" name="audio" accept="audio/wav">
@@ -86,7 +86,8 @@ body {
 		
 		<ng-container *ngIf="myTxt">
       <br>
-      <h2>{{myTxt}}</h2>
+      <h2 id="sound"></h2>
+      <h2 id="notify"></h2>
     </ng-container>
 
 		<script>
@@ -95,8 +96,9 @@ body {
 			app.controller("myCtrl", function($scope, $http) {
 			  $scope.myFunc = function () {	
 
-				let url = 'http://ec2-3-17-5-13.us-east-2.compute.amazonaws.com:5000/upload';
-				let audioUploaded = document.getElementById('audioFile');
+				//let url = 'http://ec2-3-17-5-13.us-east-2.compute.amazonaws.com:5000/upload';
+        let url = 'http://0.0.0.0:5000/upload';
+        let audioUploaded = document.getElementById('audioFile');
         let fileList = audioUploaded.files;
 
         if(fileList.length > 0) {
@@ -108,7 +110,13 @@ body {
             if (this.readyState == 4 && this.status == 200) {
               var myArr = JSON.parse(this.response);
               console.log(myArr.sound_source);
-              alert(myArr.sound_source + ' detected')
+              var text = myArr.sound_source + " detected";
+              document.getElementById("sound").innerHTML =text;
+              if(myArr.notification=='Sent'){
+                var notify = "Notification sent to concerned authorities";
+                document.getElementById("notify").innerHTML =notify;
+              }
+              //alert(myArr.sound_source + ' detected')
             }
           };
           request.open("POST", url);
