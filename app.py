@@ -31,12 +31,16 @@ def file_upload():
         #check if data recieved is of file type
         if 'file' not in request.files:
             flash('No file part')
-            return redirect(request.url)      
+            response = jsonify({"status":"file_exist","message":"No file uploaded "})  
+            response.status_code=200
+            return response    
         #retrieve file from request
         file = request.files['file']
         if file.filename == '':
             flash('No selected file')
-            return redirect(request.url)
+            response = jsonify({"status":"file_exist","message":"No file uploaded "})
+            response.status_code=200
+            return response
             
         if file and verify_extention(file.filename):
             filename = secure_filename(file.filename)
@@ -51,10 +55,10 @@ def file_upload():
             #return redirect(url_for('uploaded_file',filename=filename))
             return response
         else:
-            response = jsonify({"message":"File upload failed, extention not supported "})
-            response.status_code=500
+            response = jsonify({"status":"file_format","message":"File upload failed, extention not supported "})
+            response.status_code=200
             return response
-    return jsonify({"message":"File upload failed, reupload file "}), 500
+    return jsonify({"status":"file_format","message":"File upload failed, re-upload file "}), 500
 
 @app.route('/')
 def success():

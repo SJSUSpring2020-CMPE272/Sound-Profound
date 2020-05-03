@@ -38,7 +38,11 @@ def PredictVersion2(filename,path):
             ps = librosa.feature.melspectrogram(y=y, sr=sr)
             re_shape=np.array([ps.reshape( (128, 128, 1))])
             print(re_shape)
-
+        else:
+            response = jsonify({"status": "small_size", "message": "File size is small, should be greater than 3 seconds"})
+            #print("Internal Server error: {}".format(err))
+            response.status_code=200
+            return response
         model_list = []
         model_list.append(model1)
         model_list.append(model2)
@@ -59,12 +63,12 @@ def PredictVersion2(filename,path):
                 percent=round(percent,2)
                 type(percentage)
                 type(percent)
-                send_email(receiver_email,percentage)
-                send_msg(modileNo,percentage)
-                response = jsonify({"status":200, "sound_source":categories[index],
-                 "surety":percentage, "notification":"Sent"})
+                send_email(receiver_email,percent)
+                send_msg(modileNo,percent)
+                response = jsonify({"status":200, "sound_source":categories[index].capitalize(),
+                 "surety":percent, "notification":"Sent"})
                 return response
-        return jsonify({"status":200, "sound_source":categories[index], "surety":percentage})
+        return jsonify({"status":200, "sound_source":categories[index].capitalize(), "surety":percentage})
     except ValueError as err:
         response = jsonify({"status": 500, "message": str(err)})
         #print("Internal Server error: {}".format(err))
