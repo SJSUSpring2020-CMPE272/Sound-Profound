@@ -1,0 +1,22 @@
+#FROM python:3.7-slim
+FROM node:10
+#FROM continuumio/anaconda3
+COPY ./About.html /usr/src/app/
+COPY ./Architecture.html /usr/src/app/
+COPY ./Architecture.jpg /usr/src/app/
+COPY ./EMT.png /usr/src/app/
+COPY ./Persona.html /usr/src/app/
+COPY ./Police.png /usr/src/app/
+COPY ./dockerserver.js /usr/src/app/
+COPY ./SoundProfund.html /usr/src/app/
+COPY ./Speakers.jpg /usr/src/app/
+WORKDIR /usr/src/app/
+RUN npm install
+RUN npm install express
+#RUN pip install -r requirements.txt
+#RUN apt-get updatenpm install express
+#RUN apt-get install libsndfile1
+EXPOSE 3000
+CMD ["node", "dockerserver.js"]
+
+

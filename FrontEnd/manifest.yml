@@ -1,0 +1,5 @@
+---
+    applications:
+     - name: SoundProfoundApp
+       random-route: true
+       memory: 2000M

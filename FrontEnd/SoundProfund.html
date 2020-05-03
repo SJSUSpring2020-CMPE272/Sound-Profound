@@ -96,8 +96,8 @@ body {
 			app.controller("myCtrl", function($scope, $http) {
 			  $scope.myFunc = function () {	
 
-				//let url = 'http://ec2-3-17-5-13.us-east-2.compute.amazonaws.com:5000/upload';
-        let url = 'http://0.0.0.0:5000/upload';
+				let url = 'http://ec2-18-223-138-187.us-east-2.compute.amazonaws.com:5000/upload';
+        //let url = 'http://0.0.0.0:5000/upload';
         let audioUploaded = document.getElementById('audioFile');
         let fileList = audioUploaded.files;
 
@@ -114,6 +114,9 @@ body {
               document.getElementById("sound").innerHTML =text;
               if(myArr.notification=='Sent'){
                 var notify = "Notification sent to concerned authorities";
+                document.getElementById("notify").innerHTML =notify;
+              }else{
+                notify = "";
                 document.getElementById("notify").innerHTML =notify;
               }
               //alert(myArr.sound_source + ' detected')
