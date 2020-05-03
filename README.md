@@ -24,8 +24,16 @@ In this project we would attempt to distinguish between the different environmen
 **Technology Stack**
 * 	Deep CNN to classify the sound.
 * 	Log scaled mel-spectrogram to observe time frequency patches.
-* 	Python 
+* 	Machine-Learning : Python 
 * 	Keras
 * 	Librosa for analysis of audio signals.
+*   IBM cloud to host the front-end
+*   AWS cloud to host the middleware and back-end
+
+**Architecture Diagram**
+
+![](272_Architecture_diagram.png)
+
+
 
 
