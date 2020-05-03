@@ -32,7 +32,7 @@ In this project we would attempt to distinguish between the different environmen
 
 **Architecture Diagram**
 
-![](272_Architecture_diagram.png)
+![](FrontEnd/Architecture.jpg)
 
 
 
