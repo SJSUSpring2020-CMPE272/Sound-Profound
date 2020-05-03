@@ -41,3 +41,8 @@ To classify and identify the urban sounds and take immediate action on hearing t
 *   IBM cloud to host the front-end
 *   AWS cloud to host the middleware and back-end
 *   Angular JS and AJAX based User-Interface
+
+
+## Home Page ##
+
+![](FrontEnd/sp.png)
