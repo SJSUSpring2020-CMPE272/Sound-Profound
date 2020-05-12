@@ -4,8 +4,12 @@
 Sound Profound !  
 (Urban Sound Classification and its response to gunshot sound using the implementation of Deep Neural Networks)
 
-## Project Idea Description ##  
-From the past few years, this has been observed that Artificial Intelligence has progressed into the medium of sound also. This idea has been taken and the implementation is to classify and identify maximum possible urban sounds. This will be done by utilizing the difference in frequency, intensity and wavelength. It can be used to plot a spectrograph and a mel-spectrogram would be utilized to identify the pattern of sound. The major aspect here is to identify the gunshot sound and report it immediately to the concerned authorities for quick action.
+## Project Idea Description ## 
+Gun Violence in the United States of America results in tens of thousands of deaths and injuries annually. As of today (5/11/2020), just in the year 2020 there have been over 14000 deaths caused due to cases of gun violence, over 9000 injuries due to gun violence, out of which around 1300 victims are teen-agers. (Ref:https://www.gunviolencearchive.org/)
+
+The United States of America has the maximum number of casualties due to gun violence across the world. These shocking numbers were the motivation behind designing our application - SoundProfound.
+
+To develop a viable solution to reduce it, Artificial Intelligence approach has been formalised.The idea of detecting sounds has been taken from the IEEE paper and the implementation is to classify and identify maximum possible urban sounds. This will be done by utilizing the difference in frequency, intensity and wavelength. The major aspect here is to identify the gunshot sound and report it immediately to the concerned authorities for quick action via email and text message.
 
 ## Abstract ##  
 Artificial Intelligence has already progressed into many areas and in the past few years it has advanced into the medium of sound. It can be the generation of a sound or identification of it. The problem of automatic environmental sound classification has received increasing attention from the research community in recent years. Its applications range from context aware computing and surveillance to noise mitigation enabled by smart acoustic sensor networks.
@@ -42,7 +46,18 @@ To classify and identify the urban sounds and take immediate action on hearing t
 *   AWS cloud to host the middleware and back-end
 *   Angular JS and AJAX based User-Interface
 
+## Link to HomePage ##
+
+http://79.5c.c1ad.ip4.static.sl-reverse.com.:31963/
 
 ## Home Page ##
 
 ![](FrontEnd/sp.png)
+
+## Email Alert for Gunshot ##
+
+![](Alert%20Messages/Email%20alert.jpeg)
+
+## Text Message Alert for Gunshot ##
+
+![](Alert%20Messages/Message%20Alert.jpeg)
