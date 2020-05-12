@@ -46,6 +46,10 @@ To classify and identify the urban sounds and take immediate action on hearing t
 *   AWS cloud to host the middleware and back-end
 *   Angular JS and AJAX based User-Interface
 
+## Video Trailer ##
+
+https://app.vyond.com/videos/a754695e-ceca-4c6b-9224-344f87f3fcf0
+
 ## Link to HomePage ##
 
 http://79.5c.c1ad.ip4.static.sl-reverse.com.:31963/
